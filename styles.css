@@ -120,6 +120,17 @@ select {
   object-position: 56% 42%;
 }
 
+.slide--robot .slide-bg {
+  object-fit: contain;
+  object-position: right center;
+  transform: translate3d(calc(var(--mx) * -0.6rem), calc(var(--my) * -0.45rem), 0) scale(0.96);
+}
+
+.slide--ipad .slide-bg {
+  object-position: center center;
+  transform: translate3d(calc(var(--mx) * -0.65rem), calc(var(--my) * -0.45rem), 0) scale(1);
+}
+
 .slide-shade {
   position: absolute;
   inset: 0;
@@ -139,6 +150,12 @@ select {
   background:
     linear-gradient(90deg, rgba(6, 8, 18, 0.94), rgba(6, 8, 18, 0.76) 50%, rgba(6, 8, 18, 0.34)),
     linear-gradient(0deg, rgba(6, 8, 18, 0.92), transparent 60%);
+}
+
+.slide--robot .slide-shade--dark {
+  background:
+    linear-gradient(90deg, rgba(6, 8, 18, 0.9), rgba(6, 8, 18, 0.52) 42%, rgba(6, 8, 18, 0.12)),
+    linear-gradient(0deg, rgba(6, 8, 18, 0.88), transparent 62%);
 }
 
 .slide-shade--hero-low {
@@ -537,6 +554,20 @@ h3 {
 .photo-caption-panel .big-copy {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.78);
+}
+
+.slide[data-title="Familien"] .photo-caption-panel {
+  max-width: 27rem;
+  padding: 1.05rem 1.15rem;
+}
+
+.slide[data-title="Familien"] .photo-caption-panel h2 {
+  max-width: 9ch;
+  font-size: clamp(2.35rem, 5.4vw, 4.25rem);
+}
+
+.slide[data-title="Familien"] .photo-caption-panel .big-copy {
+  max-width: 25rem;
 }
 
 .portrait-photo {
@@ -1100,6 +1131,11 @@ h3 {
   backdrop-filter: blur(10px);
 }
 
+.job-stamps figure:nth-child(2) figcaption {
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
 .job-stamps span:nth-child(2),
 .job-stamps figure:nth-child(2) {
   --r: 2deg;
@@ -1236,15 +1272,18 @@ h3 {
 
 .truth-card__front {
   place-items: center;
-  padding: 1rem;
+  width: 100%;
+  padding: 1rem 0.8rem;
   background:
     linear-gradient(145deg, rgba(225, 225, 228, 0.96), rgba(178, 178, 184, 0.96)),
     #c8c8cd;
   color: #11131b;
-  font-size: 1.18rem;
+  font-size: clamp(0.92rem, 1.05vw, 1.06rem);
   font-weight: 950;
-  line-height: 1.18;
+  line-height: 1.12;
   text-align: center;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .truth-card__back {
