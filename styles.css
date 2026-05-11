@@ -120,6 +120,11 @@ select {
   object-position: 56% 42%;
 }
 
+.slide--hero .slide-bg--portrait {
+  object-position: 50% 44%;
+  transform: translate3d(calc(var(--mx) * -0.5rem), calc(var(--my) * -0.35rem), 0) scale(1);
+}
+
 .slide--robot .slide-bg {
   object-fit: contain;
   object-position: right center;
