@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="En levende, statisk webpresentasjon om Ken Andersen, familie, hobbyer og profesjonell erfaring."
+    />
+    <title>Ken Andersen | levende webpresentasjon</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="ambient" aria-hidden="true"></canvas>
+
+    <header class="deck-ui" aria-label="Presentasjonsstatus">
+      <div class="brand-mark">Ken Andersen</div>
+      <div class="progress-track" aria-hidden="true">
+        <span id="progressBar"></span>
+      </div>
+      <div class="slide-counter">
+        <span id="currentSlide">01</span>
+        <span>/</span>
+        <span id="totalSlides">13</span>
+      </div>
+    </header>
+
+    <button class="nav-button nav-button--prev" type="button" aria-label="Forrige slide" data-go="prev">
+      <span aria-hidden="true">‹</span>
+    </button>
+    <button class="nav-button nav-button--next" type="button" aria-label="Neste slide" data-go="next">
+      <span aria-hidden="true">›</span>
+    </button>
+
+    <main class="deck" aria-live="polite">
+      <section class="slide slide--hero is-active" data-theme="signal" data-title="Ken Andersen">
+        <img
+          class="slide-bg slide-bg--portrait"
+          src="assets/471840969_10171428455955713_2178822364219777688_n.jpg"
+          alt=""
+        />
+        <div class="slide-shade slide-shade--hero-low"></div>
+        <div class="slide-inner hero-low">
+          <div class="hero-low__copy">
+            <p class="eyebrow reveal">Webpresentasjon, ikke PowerPoint</p>
+            <h1 class="reveal" style="--d: 80ms">Ken Andersen</h1>
+            <p class="hero-lede reveal" style="--d: 160ms">
+              Familie, teknologi, nysgjerrighet og en god porsjon “bare vent til du ser neste klikk”.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--photo" data-theme="aqua" data-title="Familien">
+        <img
+          class="slide-bg"
+          src="assets/IMG_1043.jpg"
+          alt="To jenter ved basseng på ferie"
+        />
+        <div class="slide-shade slide-shade--photo-left"></div>
+        <div class="slide-inner photo-story photo-story--left">
+          <div class="photo-caption-panel reveal">
+            <p class="eyebrow">Familien</p>
+            <h2>De beste øyeblikkene.</h2>
+            <p class="big-copy">Ferier, iskrem, basseng og små historier som blir store etterpå.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--photo" data-theme="warm" data-title="Thailand">
+        <img
+          class="slide-bg"
+          src="assets/82428892_10163538617390713_7653356190730027008_n.jpg"
+          alt="Storfamilien samlet i Thailand"
+        />
+        <div class="slide-shade slide-shade--photo-bottom"></div>
+        <div class="slide-inner photo-story photo-story--bottom">
+          <div class="photo-caption-panel photo-caption-panel--wide reveal">
+            <p class="eyebrow">Thailand</p>
+            <h2>Storfamilien.</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--dog" data-theme="paper" data-title="Ekstra familiemedlem">
+        <div class="slide-inner dog-layout">
+          <div class="copy-block">
+            <p class="eyebrow reveal">Familien vokser</p>
+            <h2 class="reveal" style="--d: 80ms">Får snart et ekstra familiemedlem.</h2>
+            <p class="big-copy reveal" style="--d: 150ms">Gleder oss veldig.</p>
+          </div>
+          <figure class="portrait-photo reveal" style="--d: 220ms">
+            <img src="assets/865A97BB-C632-4357-8A6A-64AE2DF5FC93_1_201_a.jpeg" alt="Valp som snart blir familiemedlem" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide slide--robot" data-theme="neon" data-title="Flagrebot">
+        <img
+          class="slide-bg slide-bg--right"
+          src="assets/E34C2C18-CC31-4017-A446-125037DB8A94_1_105_c.jpeg"
+          alt=""
+        />
+        <div class="slide-shade slide-shade--dark"></div>
+        <div class="slide-inner robot-layout">
+          <div class="copy-block copy-block--light">
+            <p class="eyebrow reveal">Hobbyer</p>
+            <h2 class="reveal" style="--d: 80ms">Her er “flagrebot”.</h2>
+            <p class="big-copy reveal" style="--d: 150ms">
+              Hun var en gang en leketøysrobot som tilhørte jentene, men nå har jeg adoptert den.
+              Jeg fikk lov av jentene.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--ipad" data-theme="play" data-title="Kveldsutvikling">
+        <img
+          class="slide-bg"
+          src="assets/7EA54FD0-C003-4BA1-80C4-F2B8DE77958B_1_102_o.jpeg"
+          alt=""
+        />
+        <div class="slide-shade slide-shade--photo-left"></div>
+        <div class="slide-inner photo-story photo-story--left">
+          <div class="photo-caption-panel reveal">
+            <p class="eyebrow">Kveldsfikling</p>
+            <h2>Liker å fikle med litt utvikling på kveldene.</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--minecraft" data-theme="play" data-title="Minecraft">
+        <div class="minecraft-world" aria-hidden="true"></div>
+        <div class="slide-inner minecraft-layout">
+          <div class="copy-block copy-block--light">
+            <p class="eyebrow reveal">Gaming</p>
+            <h2 class="reveal" style="--d: 80ms">Minecraft med familien.</h2>
+            <p class="big-copy reveal" style="--d: 150ms">
+              Det er noe fint med et spill der alle kan bygge, utforske, rote seg bort og finne hjem igjen sammen.
+            </p>
+          </div>
+          <figure class="minecraft-card reveal" style="--d: 220ms">
+            <img src="assets/external/minecraft-key-art.png" alt="Minecraft key art" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="slide slide--movement" data-theme="deep" data-title="Aktivitet">
+        <img class="slide-bg" src="assets/PB130096.JPG" alt="" />
+        <div class="slide-shade slide-shade--blue"></div>
+        <div class="slide-inner movement-layout movement-layout--icons">
+          <div class="copy-block copy-block--light">
+            <p class="eyebrow reveal">Aktivitet</p>
+            <h2 class="reveal" style="--d: 80ms">Best når det skjer noe.</h2>
+            <p class="big-copy reveal" style="--d: 150ms">
+              Trening, løping, sykling, svømming, ski og dykk. Jeg liker fremdrift både i kroppen og i hodet.
+            </p>
+          </div>
+          <div class="activity-icons reveal" style="--d: 220ms" aria-label="Aktiviteter">
+            <article>
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M8 27h8v10H8V27Zm40 0h8v10h-8V27ZM18 24h6v16h-6V24Zm22 0h6v16h-6V24Zm-14 5h12v6H26v-6Z"/></svg>
+              <span>vekter</span>
+            </article>
+            <article>
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M34 10a5 5 0 1 1-5 5 5 5 0 0 1 5-5Zm-8 16 8-5 7 6 8 1-1 6-10-2-4-4-5 8 8 7-4 11-6-2 3-8-8-7 2-8-8 4-3-5 13-7Z"/></svg>
+              <span>løping</span>
+            </article>
+            <article>
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 46a10 10 0 1 1 3-19l4 7h8l-5-14h-7v-6h12l3 8h7v6h-5l3 8h1a10 10 0 1 1-6 2l-3-8h-9l-5 10a10 10 0 0 1-1 6Zm0-6a4 4 0 1 0 0 .1V40Zm24 4a4 4 0 1 0 0-.1v.1Z"/></svg>
+              <span>sykling</span>
+            </article>
+            <article>
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 42c5 0 5 4 10 4s5-4 10-4 5 4 10 4 5-4 10-4v7c-5 0-5 4-10 4s-5-4-10-4-5 4-10 4-5-4-10-4v-7Zm7-10 8-11 12 4-3 5-7-2-5 7 8 1 11 4-2 6-11-4-15-2 4-8Zm27-19a5 5 0 1 1-5 5 5 5 0 0 1 5-5Z"/></svg>
+              <span>svømming</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--matrix" data-theme="matrix" data-title="The Matrix">
+        <div class="matrix-rain" aria-hidden="true"></div>
+        <div class="matrix-grid" aria-hidden="true"></div>
+        <div class="slide-inner matrix-layout">
+          <div class="matrix-copy">
+            <p class="eyebrow reveal">Favorittfilm</p>
+            <h2 class="reveal" style="--d: 80ms">The Matrix</h2>
+            <p class="big-copy reveal" style="--d: 150ms">
+              En ganske presis advarsel om at virkeligheten kan være mer formbar enn vi liker å innrømme.
+            </p>
+          </div>
+          <div class="terminal-card reveal" style="--d: 220ms" aria-label="Matrix-inspirert terminal">
+            <span>$ wake up, Ken</span>
+            <span>&gt; follow the curiosity</span>
+            <span>&gt; build the thing</span>
+            <span class="cursor-line">&gt; presentation.mode = "alive"</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--oddjobs" data-theme="paper" data-title="Tøyseslide">
+        <div class="slide-inner odd-layout">
+          <div class="copy-block">
+            <p class="eyebrow reveal">Tøyseslide</p>
+            <h2 class="reveal" style="--d: 80ms">CV-en før den ble LinkedIn-vennlig.</h2>
+            <p class="big-copy reveal" style="--d: 150ms">
+              Noen jobber bygger kompetanse. Andre bygger karakter. Noen bygger mest historier.
+            </p>
+          </div>
+          <div class="job-stamps job-stamps--photos reveal" style="--d: 220ms" aria-label="Tidligere jobber">
+            <figure>
+              <img src="assets/ig_00331b70f314438c016a0234680c508191ac49c34ae62c514b.png" alt="Illustrasjon av postbud" />
+              <figcaption>Postbud</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/ig_00331b70f314438c016a02358855b48191bd93d1ec8780776b.png" alt="Illustrasjon av fabrikkmedarbeider" />
+              <figcaption>Fabrikkmedarbeider</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/ig_00331b70f314438c016a0235112ec88191a9a0a943ce2aa1c0.png" alt="Illustrasjon av baker" />
+              <figcaption>Baker</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/ig_00331b70f314438c016a023621218c8191abe0bd202551eb31.png" alt="Illustrasjon av isbil-sjåfør" />
+              <figcaption>Isbilen</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--pro" data-theme="clean" data-title="Profesjonelt">
+        <div class="slide-inner pro-layout">
+          <div class="copy-block">
+            <p class="eyebrow reveal">Profesjonelt</p>
+            <h2 class="reveal" style="--d: 80ms">Digital transformasjon uten tåkeprat.</h2>
+            <p class="big-copy reveal" style="--d: 150ms">
+              Jeg liker å gjøre digitale muligheter forståelige, nyttige og gjennomførbare. Innovasjon er best når den
+              faktisk flytter mennesker, prosesser og beslutninger.
+            </p>
+          </div>
+          <div class="pro-orbit reveal" style="--d: 220ms" aria-label="Profesjonelle nøkkelområder">
+            <div class="core-word">Samarbeid</div>
+            <span>strategi</span>
+            <span>produkt</span>
+            <span>KI</span>
+            <span>endring</span>
+            <span>data</span>
+            <span>gjennomføring</span>
+            <span>plattform</span>
+            <span>it drift</span>
+            <span>innovasjon</span>
+            <span>kultur</span>
+            <span>kommunikasjon</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--career" data-theme="graphite" data-title="Karriere">
+        <div class="slide-inner career-layout">
+          <div class="copy-block copy-block--light">
+            <p class="eyebrow reveal">Karriere</p>
+            <h2 class="reveal" style="--d: 80ms">Fra drift til endring.</h2>
+            <p class="big-copy reveal" style="--d: 150ms">
+              Erfaring fra miljøer der teknologi må fungere i praksis, ikke bare i presentasjoner.
+            </p>
+          </div>
+          <div class="career-logo-grid reveal" style="--d: 220ms" aria-label="Arbeidssteder og miljøer">
+            <article>
+              <img src="assets/external/visma-logo.png" alt="Visma logo" />
+            </article>
+            <article>
+              <img src="assets/external/accountor-logo.png" alt="Accountor logo" />
+            </article>
+            <article>
+              <img src="assets/external/shortcut-logo.svg" alt="Shortcut logo" />
+            </article>
+            <article>
+              <img class="career-logo-grid__emblem" src="assets/external/forsvaret-emblem.svg" alt="Forsvaret emblem" />
+              <strong>Forsvaret</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide--truth" data-theme="quiz" data-title="Fleip eller fakta">
+        <div class="slide-inner truth-layout">
+          <div class="copy-block">
+            <p class="eyebrow reveal">Fleip eller fakta?</p>
+            <h2 class="reveal" style="--d: 80ms">Dette høres ut som skryt. Eller tull.</h2>
+          </div>
+          <div class="truth-grid truth-grid--flip reveal" style="--d: 180ms" aria-label="Påstander">
+            <button class="truth-card" type="button" aria-label="Vis fakta: Har ridd på struts.">
+              <span class="truth-card__inner">
+                <span class="truth-card__face truth-card__front">Har ridd på struts.</span>
+                <span class="truth-card__face truth-card__back">
+                  <img src="assets/ig_00331b70f314438c016a0232894a808191bb285339280c7880.png" alt="Illustrasjon av Ken på struts" />
+                  <span class="fact-ribbon">Fakta</span>
+                </span>
+              </span>
+            </button>
+            <button class="truth-card" type="button" aria-label="Vis fakta: Har galoppert på dromedar fra Giza-pyramiden til Kairo.">
+              <span class="truth-card__inner">
+                <span class="truth-card__face truth-card__front">Har galoppert på dromedar fra Giza-pyramiden til Kairo.</span>
+                <span class="truth-card__face truth-card__back">
+                  <img src="assets/546522705_10173119336070160_6149918580565170728_n.jpg" alt="Ken på dromedar ved pyramidene" />
+                  <span class="fact-ribbon">Fakta</span>
+                </span>
+              </span>
+            </button>
+            <button class="truth-card" type="button" aria-label="Vis fakta: Har kjørt Vietnam på langs på scooter.">
+              <span class="truth-card__inner">
+                <span class="truth-card__face truth-card__front">Har kjørt Vietnam på langs på scooter.</span>
+                <span class="truth-card__face truth-card__back">
+                  <img src="assets/472269099_10171547765590713_3844511395627673735_n.jpg" alt="Ken i Vietnam" />
+                  <span class="fact-ribbon">Fakta</span>
+                </span>
+              </span>
+            </button>
+            <button class="truth-card" type="button" aria-label="Vis fakta: Har blitt kåret Norges beste mobilfotograf.">
+              <span class="truth-card__inner">
+                <span class="truth-card__face truth-card__front">Har blitt kåret “Norges beste mobilfotograf”.</span>
+                <span class="truth-card__face truth-card__back">
+                  <span class="claim-visual claim-visual--amobil">amobil</span>
+                  <span class="fact-ribbon">Fakta</span>
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="dot-nav" aria-label="Velg slide" id="dotNav"></nav>
+
+    <script src="script.js"></script>
+  </body>
+</html>
