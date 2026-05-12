@@ -1298,6 +1298,12 @@ h3 {
   max-width: 14ch;
 }
 
+.truth-card__front-text--compact {
+  font-size: 0.9em;
+  line-height: 1.08;
+  max-width: 13ch;
+}
+
 .truth-card__back {
   background: #111827;
   transform: rotateY(180deg);
