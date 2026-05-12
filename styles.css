@@ -1287,8 +1287,15 @@ h3 {
   font-weight: 950;
   line-height: 1.12;
   text-align: center;
-  overflow-wrap: anywhere;
-  hyphens: auto;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+.truth-card__front-text {
+  display: block;
+  max-width: 14ch;
 }
 
 .truth-card__back {
